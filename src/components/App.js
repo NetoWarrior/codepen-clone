@@ -3,10 +3,12 @@ import Editor from './Editor';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 function App() {
-  const [html, setHtml] = useLocalStorage('html', '')
   const [css, setCss] = useLocalStorage('css', '')
   const [js, setJs] = useLocalStorage('js', '')
-  const [srcDoc, setSrcDoc] = useState('')
+  const [html, setHtml] = useLocalStorage('html', '')
+  
+  const [fullFile, setfullFile] = useState('')
+  
 
 
 // State to manage file system
@@ -33,7 +35,7 @@ function App() {
   // Save File on localStorage every few seconds
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setSrcDoc(`
+      setfullFile(`
         <html>
           <body>${html}</body>
           <style>${css}</style>
@@ -49,7 +51,7 @@ function App() {
     <>
     
       {/*Editor Section and File Explorer */}
-      <div className="pane top-pane">
+      <div className="editor">
         <div classname="file-explorer" > 
           <input style={{"color":"orangered"}} type="submit" value="index.html" onClick={onClickHTML} />
           <input style={{"color":"#6363f9"}} type="submit" value="index.css" onClick={onClickCSS} />
@@ -80,12 +82,12 @@ function App() {
       </div>
 
       {/* Live View Section */}
-      <div className="pane">
+      <div className="live-view">
         <iframe
-          srcDoc={srcDoc}
+          srcDoc={fullFile}
           title="output"
           sandbox="allow-scripts"
-          frameBorder="0"
+          frameBorder="4"
           width="100%"
           height="100%"
         />

@@ -2,20 +2,17 @@ body {
   margin: 0;
 }
 
-.top-pane {
-  background-color: rgb(60 63 68);
-  padding-bottom: 0.8rem;
-}
-
-.pane {
+.live-view {
   height: 50vh;
   display: flex;
 }
 
-.clr{
-  clear:both;
+.editor {
+  height: 50vh;
+  display: flex;
+  background-color: rgb(60 63 68);
+  padding-bottom: 0.8rem;
 }
-
 
 .file-explorer{
   width: auto;
@@ -26,6 +23,7 @@ body {
   padding: 10rem;
   background-color: black;
 }
+
 input {
   width:100%;
   display:block;
@@ -39,7 +37,6 @@ input {
   background-color: rgba(14, 12, 12, 0.473);
 }
 
-
 .editor-container {
   flex-grow: 1;
   flex-basis: 0;
@@ -47,23 +44,6 @@ input {
   flex-direction: column;
   padding: .5rem;
   background-color: hsl(225, 6%, 25%);
-}
-
-.editor-container.collapsed {
-  flex-grow: 0;
-}
-
-.editor-container.collapsed .CodeMirror-scroll {
-  position: absolute;
-  overflow: hidden !important;
-}
-
-.expand-collapse-btn {
-  margin-left: .5rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
 }
 
 .editor-title {
