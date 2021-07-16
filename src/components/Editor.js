@@ -13,7 +13,7 @@ import { Controlled as ControlledEditor } from 'react-codemirror2'
 export default function Editor(props) {
   const {
     language,
-    title,
+    displayName,
     value,
     onChange
   } = props
@@ -26,7 +26,7 @@ export default function Editor(props) {
   return (
     <div className="editor-container">
       <div className="editor-title">
-        {title}
+        {displayName}
       </div>
       <ControlledEditor
         onBeforeChange={handleChange}
