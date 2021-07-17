@@ -57,7 +57,7 @@ function App() {
     
       {/*Editor Section and File Explorer */}
       <div className="editor">
-        <div classname="file-explorer" > 
+        <div> 
           <input style={{"color":"orangered"}} type="submit" value="index.html" onClick={onClickHTML} />
           <input style={{"color":"#6363f9"}} type="submit" value="index.css" onClick={onClickCSS} />
           <input style={{"color":"yellow"}} type="submit" value="index.js" onClick={onClickJS} />
