@@ -7,6 +7,13 @@ body {
   display: flex;
 }
 
+.code-mirror-wrapper {
+  flex-grow: 1;
+  border-bottom-right-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+  overflow: hidden;
+}
+
 .editor {
   height: 50vh;
   display: flex;
@@ -14,14 +21,14 @@ body {
   padding-bottom: 0.8rem;
 }
 
-.file-explorer{
-  width: auto;
-  height: auto;
-  flex-grow:1;
-  flex-direction: row;
-  display:flex;
-  padding: 10rem;
-  background-color: black;
+.editor-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(225, 42%, 33%);
+  color: white;
+  padding: .5rem .5rem .5rem 1rem;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
 }
 
 input {
@@ -46,23 +53,17 @@ input {
   background-color: hsl(225, 6%, 25%);
 }
 
-.editor-title {
-  display: flex;
-  justify-content: space-between;
-  background-color: hsl(225, 6%, 13%);
-  color: white;
-  padding: .5rem .5rem .5rem 1rem;
-  border-top-right-radius: .5rem;
-  border-top-left-radius: .5rem;
+
+.file-explorer{
+  width: auto;
+  height: auto;
+  flex-grow:1;
+  flex-direction: row;
+  display:flex;
+  padding: 10rem;
+  background-color: black;
 }
 
 .CodeMirror {
   height: 100% !important;
-}
-
-.code-mirror-wrapper {
-  flex-grow: 1;
-  border-bottom-right-radius: .5rem;
-  border-bottom-left-radius: .5rem;
-  overflow: hidden;
 }

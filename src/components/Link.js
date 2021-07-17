@@ -34,6 +34,8 @@ export default function Link({code}) {
 
             setShowLink(!showLink);
 
+            /*unable to send post request to pastebin api due to CORS policy error */
+
       } 
 
     return (

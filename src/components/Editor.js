@@ -2,20 +2,22 @@ import React from 'react'
 
 //CodeMirror is an easy to use code editor plugin which works with React
 import 'codemirror/lib/codemirror.css'
-import 'codemirror/theme/material.css'
-import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
+import 'codemirror/mode/xml/xml'
 import 'codemirror/theme/monokai.css'
+import 'codemirror/theme/material.css'
+
+
 import { Controlled as ControlledEditor } from 'react-codemirror2'
 
 
 export default function Editor(props) {
   const {
+    value,
+    onChange,
     language,
     displayName,
-    value,
-    onChange
   } = props
 
 
