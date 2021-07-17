@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Editor from './Editor';
 import useLocalStorage from '../hooks/useLocalStorage';
+import Link from './Link';
+
 
 function App() {
   const [css, setCss] = useLocalStorage('css', '')
@@ -15,6 +17,7 @@ function App() {
   const[showHTMLEditor,setShowHTMLEditor] = React.useState(true);
   const[showCSSEditor,setShowCSSEditor] = React.useState(false);
   const[showJSEditor,setShowJSEditor] = React.useState(false);
+  
 
   const onClickHTML = () => {
     setShowHTMLEditor(!showHTMLEditor);
@@ -31,6 +34,8 @@ function App() {
     (showCSSEditor) && setShowCSSEditor(!showCSSEditor) ; 
     (showHTMLEditor) && setShowHTMLEditor(!showHTMLEditor);
   }
+
+  
 
   // Save File on localStorage every few seconds
   useEffect(() => {
@@ -56,7 +61,8 @@ function App() {
           <input style={{"color":"orangered"}} type="submit" value="index.html" onClick={onClickHTML} />
           <input style={{"color":"#6363f9"}} type="submit" value="index.css" onClick={onClickCSS} />
           <input style={{"color":"yellow"}} type="submit" value="index.js" onClick={onClickJS} />
-          
+        
+          <Link code={fullFile}/>
         </div>
        {/* Html Editor */}
        {showHTMLEditor && <Editor
