@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+//import pasteBinAPI from 'pastebin-js';
 //import uid from 'short-uuid';
 
 export default function Link({code}) {
@@ -16,8 +17,7 @@ export default function Link({code}) {
         bodyFormData.append('api_option','paste');
         bodyFormData.append('api_paste_code',code);
 
-
-        axios({
+          axios({
             method: "post",
             url: "https://pastebin.com/api/api_post.php",
             data: bodyFormData,
@@ -31,6 +31,8 @@ export default function Link({code}) {
               //handle error
               console.log(response);
             });
+
+            setShowLink(!showLink);
 
       } 
 
